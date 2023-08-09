@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <title>V&S TECNOLOGIA</title>
+</head>
+<body>
+    <div class="home">
+        <div class="header">
+            <div class="logo">
+                <img src="./images/logo.png" alt="">
+                <p><strong>V&S</strong></p>
+                <p>TECNOLOGIA </p>
+                <p> INSPIRANDO A EVOLUÇÃO!</p>
+            </div>
+            <div class="items">
+                <a href="https://wa.me/5504934428218"><i class='bx bxl-whatsapp' ></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+            </div>
+    </div>
+    <div class="homeText">
+        <h1>Conecte <br> sua empresa <br> ao futuro</h1>
+        <p>Potencialize seu negócio com soluções <br> tecnológicas personalizadas</p>
+    </div>
+</div>
+        
+
+<div class="solutions">
+    <h2>Soluções completas</h2>
+    <p>Oferecemos serviços em tecnologia que vão facilitar e impulsionar o seu negócio.</p>
+    <div class="solutions-cards">
+        <div class="TI">
+                <img src="./images/redes.png" alt="">
+                <h3>Terceirização & gestão de TI</h3>
+                <p>Oferecemos soluções completas e personalizadas para otimizar sua infraestrutura de tecnologia, garantir a segurança dos dados e impulsionar a eficiência operacional da sua empresa. Com nossa expertise e compromisso com a excelência, permitimos que você se concentre no seu negócio principal, enquanto cuidamos de todos os aspectos relacionados à tecnologia.</p>
+            </div>
+            <div class="Redes">
+                <img src="./images/organograma.png" alt="">
+                <h3>Redes & Infraestrutura</h3>
+                <p>Oferecemos soluções completas de redes e infraestruturas conectadas. <br> Nós projetamos, implementamos e gerenciamos sistemas robustos e escaláveis para impulsionar a segurança e desempenho dos seus ambientes de rede. Com a nossa experiência e expertise, ajudamos você a construir uma base sólida para suportar as demandas atuais e futuras do seu negócio.</p>
+            </div>
+            <div class="Seg">
+                <img src="./images/notebook.png" alt="">
+                <h3>Segurança corporativa</h3>
+                <p>Somos uma empresa confiável em soluções de segurança corporativa. Nossa missão é proteger seu negócio contra ameaças internas e externas, garantindo a integridade, confidencialidade e disponibilidade dos seus dados e sistemas. Oferecemos soluções personalizadas e ajudamos sua empresa a enfrentar os desafios atuais e emergentes de segurança cibernética.</p>
+            </div>
+        </div>
+    </div>
+    <section class="middle">
+        <div class="mid">
+            <div>
+                <h2>Soluções <br> tecnológicas <br> para impulsionar <br> sua empresa</h2>
+                <p>Estamos dedicada a superar todas as <br> expectativas. Com uma equipe de <br> especialistas altamente qualificados e <br> soluções inovadoras, estamos <br> comprometidos em fornecer serviços de <br> excelência e resultados excepcionais.</p>
+            </div>
+        </div>
+        <div class="contactMiddle">
+            <p>Entre em contato com nossa equipe de especialistas</p>
+            <a href="">SOLICITAR CONTATO</a>
+        </div>
+    </section>
+    <section class="notices-section">
+        <h2>Últimas notícias</h2>
+        <div class="cards-notices">
+            {%NOTICES%}
+        </div>
+    </section>
+    <footer>
+        <div class="contact">
+            <div class="contactInfo">
+                <div class="p">
+                    <p>FALE CONOSCO</p>
+                </div>
+                <div>
+                    <div class="adress">
+                        <p>Rua Lindolpho José Bordin, 109</p>
+                        <p>Concórdia, Santa Catarina - 89711-206</p>
+                    </div>
+                </div>
+                <div class="telefone">
+                    <p>+55 49 3442-8218</p>
+                </div>
+                <div class="site">
+                    <p>
+                        <a href="https://ves.tec.br">ves.tec.br</a>
+                    </p>
+                </div>
+            </div>
+            <div class="forms">
+                <form id="meu-form" action="/cadastro" method="post">
+                    <input type="text" name="nome" id="nome" placeholder="Nome">
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="tel" name="telefone" placeholder="Telefone">
+                    <input type="text" name="empresa" id="empresa" placeholder="Empresa">
+                    <textarea name="menssagem" id="" cols="30" rows="10" placeholder="Sua mensagem"></textarea>
+                    <button type="button" onclick="enviarFormulario()">SOLICITAR CONTATO</button>
+                </form>
+                <!-- <button type="button" onclick="formulario()"> Cu </button> -->
+            </div>
+            
+            
+            
+        </div>
+        <div class="all-footer">
+            <div class="footer">
+                <div class="logo-footer">
+                    <img src="./images/logo.png" alt="">
+                    <div class="text-footer">
+                        <p>V&S TECNOLOGIA</p>
+                        <p>INSPIRANDO A EVOLUÇÃO!</p>
+                    </div>
+                </div>
+                <div class="adress-footer">
+                    <p> Rua Lindolpho José Bordin, 109 </p>
+                    <p> Concórdia, Santa Catarina - 89711-206</p>
+                    <p> contato@vstecnologia.com.br </p>
+                </div>
+            </div>
+            <div class="items">
+                <a href="https://wa.me/5504934428218" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+                <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
+            </div>
+        </div>
+        
+    </footer>
+    <div id="email-sucesso" style="display: none;">
+        <h1> enviado com <strong>sucesso</strong> </h1>
+        <button onclick="SairDiv()"> Fechar </button>
+    </div>
+    <div id="email-erro" style="display: none;">
+        <h1> <strong>erro</strong> ao enviar o email </h1>
+        <p> Entre em contato com o suporte </p>
+        <button onclick="SairDiv()"> Fechar </button>
+    </div>
+    <div class="cookies">
+        <form id="cookie-form" method="post" action="/configurar-cookies">
+            <label>
+              <p>Nosso site se utiliza de cookies para melhorar sua experiência.</p>
+              <button value="true" name="aceitarCookies">
+                <p>Aceitar</p>
+              </button>
+              <button value="false" name="aceitarCookies">
+                <p>Recusar</p>
+              </button>
+            </label>
+        </form>
+    </div>
+    <div class="ass">
+        <p>V&S Tecnologia site by João and Rauber</p>
+    </div>
+    <div class="whats">
+        <a href="https://wa.me/5504934428218"><i class='bx bxl-whatsapp'></i></a>
+    </div>
+    <script>
+        // Função para ocultar o formulário
+        function ocultarFormulario() {
+          const cookieForm = document.getElementById('cookie-form');
+          cookieForm.classList.add('hidden');
+        }
+    
+        // Verificar se o cookie foi aceito e ocultar o formulário, se necessário
+        const aceitaCookies = '{%ACEITA_COOKIES%}'; // Substituir pelo valor real do cookie (Sim ou Não)
+        console.log(aceitaCookies);
+        if (aceitaCookies === 'Sim') {
+          ocultarFormulario();
+          setTimeout(() => {
+            document.getElementById('cookie-form').classList.remove('hidden');
+            }, 10000);
+        }
+
+    function enviarFormulario() {
+      const formulario = document.getElementById('meu-form');
+      const formData = new FormData(formulario);
+            
+      console.log(formData);
+      fetch('/cadastro', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Os dados enviados pelo servidor estão em 'data'
+        console.log('Resposta do servidor:', data);
+
+        // Verifique o status da resposta
+        if (data.status === 'success') {
+            var sucesso = document.getElementById('email-sucesso')
+            sucesso.style.display = 'block';
+          // Faça o que for necessário com os dados de sucesso
+        } else {
+            var erro = document.getElementById('email-erro')
+            erro.style.display = 'block';
+          // Trate o erro, se necessário
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao enviar a solicitação:', error);
+      });
+    }
+
+    function SairDiv() {
+        document.getElementById('email-sucesso').style.display = 'none';
+        document.getElementById('email-erro').style.display = 'none';
+    }
+      </script>
+</body>
+</html>
