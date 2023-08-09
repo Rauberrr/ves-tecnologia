@@ -101,6 +101,7 @@ router.post('/cadastro', async function(req, res) {
 
 app.use('/', router);
 
-app.listen(21006, () => {
+app.listen(
+  process.env.PORT_APP || 21006, () => {
     console.log('server on');
 });

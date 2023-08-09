@@ -11,6 +11,30 @@ html,body{
     display: none;
 }
 
+div.custom-loaderdiv {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+
+.custom-loader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    padding:1px;
+    background:conic-gradient(#0000 10%,var(--color-logo));
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1.1s infinite linear;
+}
+
+@keyframes s3 {
+    to {
+        
+        transform: rotate(1turn)
+    } 
+}
+
 :root{
     --color-logo: #84d2e2;
     --font-color-blue:  #294d6f;
@@ -517,10 +541,12 @@ div.whats i{
 }
 
 div#email-sucesso, div#email-erro  {
-    padding: 1.4em;
+    background-color: #84d2e2e7;
     text-align: center;
     width: 30%;
-    background-color: var(--footer-color);
+    min-width: 300px;
+    padding: 1em 2em 1em 2em;
+    /* background-color: var(--footer-color); */
     color: var(--color-font-bg);
     position: fixed;
     top: 50%;
@@ -530,6 +556,16 @@ div#email-sucesso, div#email-erro  {
     /* height: 20%; */
 }
 
+.bx-check {
+    color: #2ab33f;
+    scale: 1.3;
+}
+
+.bx-x {
+    color: rgb(160, 52, 52);
+    scale: 1.5;
+}
+
 div#email-sucesso button, div#email-erro button {
     font-weight: 600;
     background-color: var(--color-font-bg);
@@ -537,25 +573,17 @@ div#email-sucesso button, div#email-erro button {
     padding: 1em;
     border-radius: .3em;
     width: 30%;
-    margin-bottom: .5em;
+    margin-bottom: 20px;
     cursor: pointer;
-}
-
-div#email-sucesso strong {
-    color: green;
-}
-
-div#email-erro strong {
-    color: rgb(158, 52, 52);
 }
 
 div#email-sucesso p, div#email-erro p {
     margin-top: 0;
-    margin-bottom: 2em;
 }
 
 div#email-sucesso h1, div#email-erro h1 {
     margin-bottom: 0;
+    
 }
 
 @keyframes email {

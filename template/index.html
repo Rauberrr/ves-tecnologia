@@ -130,13 +130,17 @@
         
     </footer>
     <div id="email-sucesso" style="display: none;">
-        <h1> enviado com <strong>sucesso</strong> </h1>
+        <h1> Sucesso ao enviar o email <i class='bx bx-check bx-tada' ></i> </h1>
+        <p> Vamos responder o mais rápido possível! </p>
         <button onclick="SairDiv()"> Fechar </button>
     </div>
     <div id="email-erro" style="display: none;">
-        <h1> <strong>erro</strong> ao enviar o email </h1>
-        <p> Entre em contato com o suporte </p>
+        <h1> Falha ao enviar o email <i class='bx bx-x bx-tada' ></i></h1>
+        <p> Confira se os campos foram preenchidos adequadamente. </p>
         <button onclick="SairDiv()"> Fechar </button>
+    </div>
+    <div class="custom-loaderdiv">
+        <div id="loader" class="custom-loader" style="display: none;"></div>
     </div>
     <div class="cookies">
         <form id="cookie-form" method="post" action="/configurar-cookies">
@@ -175,6 +179,9 @@
         }
 
     function enviarFormulario() {
+      var loader = document.getElementById('loader')
+      loader.style.display = 'block';
+        
       const formulario = document.getElementById('meu-form');
       const formData = new FormData(formulario);
             
@@ -187,7 +194,7 @@
       .then(data => {
         // Os dados enviados pelo servidor estão em 'data'
         console.log('Resposta do servidor:', data);
-
+        loader.style.display = 'none';
         // Verifique o status da resposta
         if (data.status === 'success') {
             var sucesso = document.getElementById('email-sucesso')
