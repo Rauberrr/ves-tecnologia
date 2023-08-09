@@ -101,6 +101,6 @@ router.post('/cadastro', async function(req, res) {
 
 app.use('/', router);
 
-app.listen(4000, () => {
+app.listen(21006, () => {
     console.log('server on');
 });
