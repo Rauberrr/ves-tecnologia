@@ -10,6 +10,7 @@ const SerchNotices = require(`${__dirname}/models/serch-noticias`)
 const cors = require('cors');
 const router = express.Router();
 const multer = require('multer');
+const https = require('https');
 
 const cookieParser = require('cookie-parser');
 
@@ -101,7 +102,13 @@ router.post('/cadastro', async function(req, res) {
 
 app.use('/', router);
 
-app.listen(
-  process.env.PORT_APP || 21006, () => {
+const options = {
+  key: fs.readFileSync(`${__dirname}/lets/privkey.pem`),
+  cert: fs.readFileSync(`${__dirname}/lets/cert.pem`)
+};
+
+const server = https.createServer(options, app);
+
+server.listen((process.env.PORT_APP || 3000), () => {
     console.log('server on');
 });
