@@ -7,8 +7,59 @@ html,body{
     
 }
 
-.hidden {
-    display: none;
+div#email-sucesso, div#email-erro  {
+    background-color: #84d2e2e7;
+    text-align: center;
+    width: 30%;
+    min-width: 300px;
+    padding: 1em 2em 1em 2em;
+    /* background-color: var(--footer-color); */
+    color: var(--color-font-bg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* animation: 1s email ease-out; */
+    /* height: 20%; */
+}
+
+.bx-check {
+    color: #2ab33f;
+    scale: 1.3;
+}
+
+.bx-x {
+    color: rgb(160, 52, 52);
+    scale: 1.5;
+}
+
+div#email-sucesso button, div#email-erro button {
+    font-weight: 600;
+    background-color: var(--color-font-bg);
+    border: 0px;
+    padding: 1em;
+    border-radius: .3em;
+    width: 30%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+div#email-sucesso p, div#email-erro p {
+    margin-top: 0;
+}
+
+div#email-sucesso h1, div#email-erro h1 {
+    margin-bottom: 0;
+    
+}
+
+@keyframes email {
+    from {
+        transform: translate(-50%, 200%);
+    }
+    to {
+        transform: translateY(-50%, 0);
+    }
 }
 
 div.custom-loaderdiv {
@@ -30,9 +81,12 @@ div.custom-loaderdiv {
 
 @keyframes s3 {
     to {
-        
         transform: rotate(1turn)
     } 
+}
+
+.hidden {
+    display: none;
 }
 
 :root{
@@ -46,12 +100,24 @@ div.custom-loaderdiv {
     --border-color: #40698a;
 }
 
+a{
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-font-bg);
+}
+
+header{
+    position: absolute;
+    width: 100%;
+}
+
 div.header{
     margin: 0px 10%;
-    padding-top: 10px;
     display: flex;
-    height: 80px;
+    height: 60px;
     justify-content: space-between;
+    z-index: 1;
 }
 
 
@@ -60,11 +126,13 @@ div.logo{
     display: flex;
     color: var(--color-font-bg);
     align-items: center;
+    margin-top: 13px;
 }
 
 div.logo p{
     font-size: 1.2em;
     height: 40px;
+    display: inline;
 }
 
 div.logo p:nth-child(2){
@@ -73,13 +141,14 @@ div.logo p:nth-child(2){
 
 div.logo p:nth-child(4){
     font-size: .7em;
-    padding: 1.4em 0 0 .5em;
+    padding: 1.7em 0 0 .5em;
 }
 
 div.logo img{
     position: relative;
     width: 50px;
     height: 50px;
+    transform: translateY(-10px);
 }
 
 div.headerItems{
@@ -95,14 +164,14 @@ div.iconsItems{
 div.header div.items{
     position: relative;
     width: auto;
-    margin-top: 14px;
+    margin-top: 12px;
     display: flex;
     justify-content: end;
 }
 
 
 div.iconsItems p{
-    color: var(--color-font-bg);
+    color: var(--color-logo);
     font-size: 1.2em;
     margin: 1%;/* 
     position: relative;
@@ -173,10 +242,22 @@ div.items a:hover i{
 div#mobileHeader ul#mobileNavItemsListID{
     display: none;
     position: absolute;
-    top: 50px;
+    top: 33px;
     list-style: none;
     background-color: var(--font-color-blue-2);
     padding: 10px;
+    opacity: 0;
+    animation: mobileListShow .7s forwards;
+}
+
+@keyframes mobileListShow{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 div#mobileNav{
@@ -192,7 +273,7 @@ div#mobileNav span{
     display: flex;
     color: var(--color-font-bg);
     font-size: 1.2em;
-    height: 40px;
+    height: 55px;
     margin-right: 10px;
 }
 
@@ -232,7 +313,7 @@ div.mobileIconsItems{
 
 div.mobileIconsItems a{
     width: 40px;
-    height: 40px;
+    height: 60px;
     transform: translateY(-3px);
 }
 
@@ -249,12 +330,13 @@ div.homeText{
     width: 80%;
     position: relative;
     left: 17%;
-    top: 20%;
+    top: 25%;
 }
 
 div.homeText h1{
     color: var(--color-logo);
     font-size: 6em;
+    margin: 0;
     margin-bottom: -.5em;
     font-weight: 900;
     line-height: .9em;
@@ -270,14 +352,15 @@ div.homeText p{
 
 div.solutions{
     color: var(--font-color-gray);
+    margin-top: 5%;
 }
 
 div.solutions h2{
     font-size: 4em;
     text-align: center;
     color: var(--font-color-blue);
-    margin-top: 5%;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 div.solutions p{
@@ -290,14 +373,14 @@ div.solutions p{
 
 div.solutions div.solutions-cards{
     display: flex;
-    width: 70%;
+    width: 75%;
     margin: auto;
     margin-bottom: 7%;
 }
 
 div.solutions div.solutions-cards div{
     text-align: center;
-    width: 25%;
+    width: 333px;
     display: grid;
     grid-template-rows: 25% 20% 60%;
     margin: auto;
@@ -323,12 +406,11 @@ div.solutions div.solutions-cards div p{
     font-size: 1.18em;
     font-weight: lighter;
     width: 100%;
-    margin-bottom: 0;
 }
 
 section.middle{
     color: var(--color-font-bg);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 section.middle div.mid {
@@ -336,6 +418,7 @@ section.middle div.mid {
     background-size: cover;
     background-position: center center;
     height: 90vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,9 +451,10 @@ section.middle div.contactMiddle{
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
+    min-height: 100px;
 }
 
-section.middle div.contactMiddle p , a{
+section.middle div.contactMiddle p , div.contactMiddle a{
     font-size: 1.8em;
     text-align: center;
     text-decoration: none;
@@ -413,47 +497,56 @@ section.notices-section h2::after{
     content: '';
     display: inline-block;
     height: 3px;
-    width: 200px;
-    background:linear-gradient(180deg,#84d2e2 20%, var(--font-color-blue-2) 20%);
-    background:-webkit-linear-gradient(180deg,#84d2e2 20%,var(--font-color-blue-2) 20%);
+    width: 50%;
+    background:linear-gradient(180deg,#84d2e2 30%, var(--font-color-blue-2) 20%);
+    background:-webkit-linear-gradient(180deg,#84d2e2 30%,var(--font-color-blue-2) 20%);
     position: relative;
-    top: 20px;
-    left: -58.5%;
+    top: -30px;
 }
 
 section.notices-section div.cards-notices{
     display: flex;
-    justify-content: space-around;
-    width: 70vw;
+    justify-content: center;
     margin: auto;
     margin-bottom: 5%;
-    animation: andar 3s normal;
+    flex-wrap: wrap;
 }
 
 section.notices-section div.cards-notices div.card-notice{
    /*  border-bottom: 2px solid var(--font-color-gray) ; */
-    min-height: 615px;
-    max-width: 400px;
-    max-height: 700px;/* 
+    height: 600px;/* 
     display: grid;
     grid-template-rows: 50% 15% 25% 10%; */
     margin: 30px;
+    width: 380px;
+    position: relative;
+    border-bottom: 2px solid var(--font-color-gray);
 }
 
-/* section.notices-section div.cards-notices div.card-notice div.card-notice-img{  
-    background-image: url(images/notebook.png);
-    background-size: cover;
-    background-position: center center;
-} */
+section.notices-section div.cards-notices div.card-notice div.card-notice-img{ 
+    width: 100%;
+}
 
 section.notices-section div.cards-notices div.card-notice div.card-notice-img img{
     width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 2/1.5;
+    object-fit: cover;
 }
 
 section.notices-section div.cards-notices div.card-notice h3{
     font-size: 1.8em;
     color: var(--font-color-blue);
     font-weight: 500;
+    display: -webkit-box; /* Define o display como uma caixa flexível */
+    -webkit-line-clamp: 2; /* Define o número máximo de linhas exibidas */
+    -webkit-box-orient: vertical; /* Orientação vertical das linhas */
+    overflow: hidden; /* Oculta o conteúdo excedente */
+    text-overflow: ellipsis; /* Adiciona os três pontos de reticências */
+}
+
+section.notices-section div.cards-notices div.card-notice h3:hover{
+    display: block;
 }
 
 section.notices-section div.cards-notices div.card-notice p{
@@ -461,16 +554,22 @@ section.notices-section div.cards-notices div.card-notice p{
     font-size: 1.1em;
 }
 
+section.notices-section div.cards-notices div.card-notice div.notice-link{
+    position: absolute;
+    bottom: 10px;
+    text-align: right;
+    width: 100%;
+}
+
 section.notices-section div.cards-notices div.card-notice div a{
     color: var(--font-color-blue);
     font-weight: 500;
     font-size: 1em;
     position: relative;
-    margin-bottom: 10px;
-    left: 67%;
+    bottom: 0;
 }
 
-section.notices-section div.cards-notices div.card-notice div a::after{
+/* section.notices-section div.cards-notices div.card-notice div a::after{
     content: "";
     display: block;
     width: 100%;
@@ -480,7 +579,7 @@ section.notices-section div.cards-notices div.card-notice div a::after{
     top: 20px;
     left: -67%;
 }
-
+ */
 section.notices-section div.cards-notices div.card-notice div a i{
     color: var(--color-logo);
     font-size: 1.6em;
@@ -520,95 +619,43 @@ section.contact div.contact-items i{
 
 div.whats{
     position: fixed;
-    right: 8%;
     transform: translateY(-50%);
-    width: 70px;
+    width: 120px;
     height: 70px;
     border-radius: 50%;
-    background-color: #2ab33f;
     text-align: center;
     right: 50px;
     top: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 div.whats i{
-    font-size: 50px;
+    font-size: 40px;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-font-bg);
+    color: var(--color-logo);
     width: 100%;
+    display: inline;
 }
 
-div#email-sucesso, div#email-erro  {
-    background-color: #84d2e2e7;
-    text-align: center;
-    width: 30%;
-    min-width: 300px;
-    padding: 1em 2em 1em 2em;
-    /* background-color: var(--footer-color); */
-    color: var(--color-font-bg);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* animation: 1s email ease-out; */
-    /* height: 20%; */
-}
-
-.bx-check {
-    color: #2ab33f;
-    scale: 1.3;
-}
-
-.bx-x {
-    color: rgb(160, 52, 52);
-    scale: 1.5;
-}
-
-div#email-sucesso button, div#email-erro button {
-    font-weight: 600;
-    background-color: var(--color-font-bg);
-    border: 0px;
-    padding: 1em;
-    border-radius: .3em;
-    width: 30%;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-div#email-sucesso p, div#email-erro p {
-    margin-top: 0;
-}
-
-div#email-sucesso h1, div#email-erro h1 {
-    margin-bottom: 0;
-    
-}
-
-@keyframes email {
-    from {
-        transform: translate(-50%, 200%);
-    }
-    to {
-        transform: translateY(-50%, 0);
-    }
-}
-
-
-footer {
+section.footer{
     background-image: url(images/Site_V&S_05.jpg);
     background-size: contain;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+footer {
     display: grid;
     grid-template-rows: 60% 30%;
     position: relative;
     bottom: -1px;
+    min-height: 100vh;
 }
 
-div.all-footer {
+div.all-footer, div.all-footer-mobile{
     padding: 1.3em 0 1em 0;
     display: flex;
     margin: auto;
@@ -617,20 +664,21 @@ div.all-footer {
     width: 70%;
     color: white;
     margin-bottom: 0;
+    min-height: 250px;
+    margin-top: 4%;
 }
 
+div.all-footer div.footer div.logo-footer{
+    display: flex;
+}
 
-div.logo-footer img {
-    transform: translate(-85%, 97%);
+div.logo-footer img, div.all-footer-mobile img {
+  /*   transform: translate(-85%, 97%); */
     position: relative;
     width: 85px;
     height: 85px;
 }
 
-
-div.footer {
-    width: 300px;
-}
 
 div.text-footer p:nth-child(1){
     font-weight: bold;
@@ -639,7 +687,7 @@ div.text-footer p:nth-child(1){
 
 
 div.text-footer p:nth-child(2){
-    margin: -2.4em 0 2.4em 5.5em;
+    margin: -1.3em 0 2.4em 6.8em;
     font-size: .7em;
     /* padding: 0 0 0 5em; */
 }
@@ -648,23 +696,31 @@ span#fraseEmpresa{
     font-weight: 100;
 }
 
+div.all-footer div.adress-footer p {
+    margin-left: 85px;
+}
+
 div.adress-footer p {
     font-size: .9em;
     margin: .2em;
 }
 
-div.all-footer div.items {
+
+div.all-footer div.items , div.all-footer-mobile div.items{
     margin-top: 100px;
     height: 50px;
 }
 
-div.all-footer div.items div a{
+div.all-footer div.items div a, div.all-footer-mobile div.items div a{
     margin: 30px;
 }
 
 div.ass {
     background-color: var(--color-logo);
-    padding: 1em;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 div.ass p {
     text-align: center;
@@ -678,10 +734,10 @@ footer div.contact{
     width: 70%;
     margin: auto;
     border-bottom: 1px solid var(--color-logo);
-    margin-top: 13%;
+    margin-top: 6%;
 }
 
-footer div.contact div{
+footer div.contact > div{
     margin: 0 5%;
 }
 
@@ -717,10 +773,6 @@ footer div.contact div.forms form{
                          "menssagem menssagem";
 }
 
-footer div.contact div.forms button {
-    cursor: pointer;
-}
-
 footer div.contact div.forms form input, textarea{
     background: rgba(63, 159, 204, 0.226);
     border-radius: 10px;
@@ -752,55 +804,64 @@ textarea:focus, input:focus {
     outline: 0;
 }
 
+footer div.contact div.contactInfo {
+    margin: 5%;
+    margin-top: 0;
+}
+
 footer div.contact div.contactInfo div.p p, div.telefone p{
     color: var(--color-logo);
     font-size: 2.1em;
     font-weight: 800;
-    scale: 1;
+    display: block;
+}
+
+footer div.contact div.contactInfo div.p p{
     margin: 4%;
+    margin-left: 7%;
+}
+
+footer div.contact div.contactInfo div.telefone p{
+    margin: 3%;
     margin-left: 7%;
 }
 
 footer div.contact div.contactInfo div.telefone p a{
     color: var(--color-logo);
     font-size: 1.2em;
-    margin-left: 7%;
 }
 
 footer div.contact div.contactInfo div.telefone p a i{
-    transform: translateY(10%);
+    transform: translateY(11%);
 }
 
-footer div.contact div.contactInfo div div.adress{
-    margin: 5% 0% 5% 7%;
+footer div.contact div.contactInfo div > div{
+    margin: 4%;
+    margin-left: 7%;
+}
+
+footer div.contact div.contactInfo div div > p{
+    margin: 4%;
+    margin-left: 7%;
 }
 
 
-footer div.contact div.contactInfo div.site p a{
-    margin-left: 2%;
-}
-
-footer div.contact div.contactInfo div div.adress p, div.site a{
+footer div.contact div.contactInfo div div.adress p{
     color: var(--color-font-bg);
     font-size: 1.5em;
     font-weight: 400;
+    display: inline-block;
     margin: 0;
 }
 
 footer div.contact div.contactInfo div.site p{
-    margin: 5%;
-}
-
-
-
-/* footer div.contact div.forms form{
-    grid-column: 2;
-    height: 35px;
-    justify-content: right;
-    display: flex;
-    position: relative;
-    transform: translateY(-200%);
-} */
+   display: inline-block;
+   font-weight: 400;
+   margin: 4%;
+   margin-left: 7%;
+   font-size: 1.5em;
+   color: var(--color-font-bg);
+} 
 
 footer div.contact div.forms form button{
     height: 40px;
@@ -835,13 +896,40 @@ div.items{
 }
 
 div.cookies{
-    position: absolute;
-    width: 300px;
-    top: 50px;
-    border-radius: 10px;
+    position: fixed;
+    width: 100vw;
+    bottom: 0px;
     background-color: var(--color-logo);
     font-weight: 400;
     color: var(--footer-color);
+    display: flex;
+    height: 60px;
+}
+
+
+div.cookies form{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+div.cookies form p, button{
+    margin-left: 10px;
+}
+
+div.cookies form button{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+div.all-footer-mobile{
+    display: none;
 }
 
 @media (max-width: 1250px){ /* Cards-break */
@@ -899,7 +987,7 @@ div.cookies{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        height: 200px;
+        height: 150px;
     }
 
     section.middle div.contactMiddle a {
@@ -925,41 +1013,64 @@ div.cookies{
 
 
     section.notices-section div.cards-notices{
-        width: 80vw;
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        width: 100vw;
         margin: 0 auto;
+        display: flex;
     }
+    
+/*     section.notices-section div.cards-notices div.card-notice{
+        width: 80%;
+        margin: 0 auto;
+    } */
 
-    section.notices-section{
+    /* section.notices-section div.cards-notices div.card-notice div#notice-link{
+        right: 0;
+    } */
+
+/*     section.notices-section{
         height: 100%;
-        width: 80vw;
-        margin: 100px auto;
+        width: 100%;
+        margin: 60px auto;
+    } */
+
+    section.notices-section h2{
+        left: 8%;
     }
 
     footer div.contact{
-        display: block;
-        height: 110vh;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
         margin-top: 1%;
     }
 
     footer div.contact div.contactInfo{
+        width: 100%;
         height: 50%;
+        margin-bottom: 20px;
     }
 
     footer div.contact div.forms{
-        height: 50%;
+        width: 100%;
     }
     
     footer div.contact div.items{
         display: none;
     }
 
-    ooter div.contact div.contactInfo div.p p, div.telefone p{
+    footer div.contact div.contactInfo{
+        margin: 8%;
+    }
+
+    footer div.contact div.contactInfo div.p p, div.telefone p{
         color: var(--color-logo);
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: 800;
         margin: 2%;
+        margin-left: 3%;
+    }
+
+    footer div.contact div.contactInfo div.telefone p{
         margin-left: 3%;
     }
     
@@ -973,16 +1084,13 @@ div.cookies{
     }
     
     footer div.contact div.contactInfo div div.adress p, div.site a{
+        font-size: 110%;
         margin: 0;
     }
     
     footer div.contact div.contactInfo div.site p{
         margin: 3%;
     }
-
-/*     footer div.contact{
-        margin-bottom: 30%;
-    } */
 
     div.solutions div.solutions-cards div{
         display: grid;
@@ -1001,6 +1109,28 @@ div.cookies{
     ul.navItemsList{
         display: none;
     }
+
+    div.all-footer{
+        display: none;
+    }
+
+    div.all-footer-mobile{
+        height: 250px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.all-footer-mobile div.logo-footer img{
+        display: none;
+    }
+
+    div.all-footer-mobile div.items{
+        position: relative;
+        margin-top: 50px;
+    }
+
 }
 
 @media (max-width: 770px){
@@ -1009,28 +1139,17 @@ div.cookies{
         display: none;
     }
 
-    div.all-footer{
-        width: 80vw;
-    }
-
-    div.all-footer div.logo-footer img{
-        display: none;
-    }
-
-    div.all-footer div.items{
-        position: relative;
-        margin-top: 20px;
-    }
-
     div.whats{
         position: fixed;
-        right: 8%;
-        transform: translateY(-50%);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #2ab33f;
+        right: 0%;
+        top: 85%;
+        width: 100px;
+    }
+
+    div.whats div{
+        width: 40px;
         text-align: center;
+        margin: 0;
     }
     
     div.whats i{
@@ -1038,7 +1157,7 @@ div.cookies{
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        color: var(--color-font-bg);
+        color: var(--color-logo);
     }
 
     footer div.contact div.forms form{
@@ -1108,10 +1227,6 @@ div.cookies{
     }
     div.solutions div.solutions-cards div p{
         margin-bottom: 0;
-    }
-
-    div.header{
-        margin: 0px 5%;
     }
     
 }

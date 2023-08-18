@@ -10,6 +10,7 @@ const SerchNotices = require(`${__dirname}/models/serch-noticias`)
 const cors = require('cors');
 const router = express.Router();
 const multer = require('multer');
+const main = require(`${__dirname}/models/main`);
 const https = require('https');
 
 const cookieParser = require('cookie-parser');
@@ -32,36 +33,32 @@ app.use(cookieParser());
 app.use(cors());
 app.use(multer().none());
 
-
-const conn = require(`${__dirname}/models/conn`);
-conn();
-
-// cron.schedule('* */2 * * *', () => {
-//   SerchNotices();
-// });
+cron.schedule('*/2 * * * *', () => {
+  SerchNotices();
+});
 
 router.post('/configurar-cookies', (req, res) => {
   let { aceitarCookies } = req.body;
-
-  if (aceitarCookies === 'true') {
-    res.cookie('aceitarCookies', 'true', { maxAge: 20000 });
-  } else {
-    res.clearCookie('aceitarCookies');
-    // res.cookie('aceitarCookies', 'false', { maxAge: 20000 });
-  }
-
-  res.redirect('/');
-});
-
-
-
-
-// main page
-router.get('/', function(req, res) {
+    
+    if (aceitarCookies === 'true') {
+      res.cookie('aceitarCookies', 'true', { maxAge: 20000 });
+    } else {
+      res.clearCookie('aceitarCookies');
+      // res.cookie('aceitarCookies', 'false', { maxAge: 20000 });
+    }
+    res.redirect('/');
+  });
+  
+  
+  
+  
+  
+  // main page
+  router.get('/', async function(req, res) {
   // read notices
   let Noticias = fs.readFileSync(`${__dirname}/data/noticias.json`);
   let NoticiasJSON = JSON.parse(Noticias);
-  
+
   // replace data
   let replaceCards = NoticiasJSON.map(el => ReplaceData(cardsNotice, el)).join('');
 
@@ -73,31 +70,14 @@ router.get('/', function(req, res) {
   res.send(outputWithCookieInfo);
 });
 
-const email2 = require(`${__dirname}/models/email`);
+// const email2 = require(`${__dirname}/models/email`);
 // send email page
 
 
 router.post('/cadastro', async function(req, res) {
-  // var emailEnviado
-  try {
-    // const nome = req.body.nome;
-    // const email = req.body.email;
+    
+  await main(req, res);
 
-    // console.log('Nome:', nome);
-    // console.log('Email:', email);
-
-
-    await email2(req, res);
-
-
-    res.json({ status: 'success', emailEnviado: true });
-  
-  } catch (erro) {
-
-    // emailEnviado = false;
-    res.json({ status: 'error', emailEnviado: false });
-  }
-  
 });
 
 app.use('/', router);
@@ -109,6 +89,6 @@ const options = {
 
 const server = https.createServer(options, app);
 
-server.listen((process.env.PORT_APP || 3000), () => {
+server.listen(process.env.PORT_APP, () => {
     console.log('server on');
 });
