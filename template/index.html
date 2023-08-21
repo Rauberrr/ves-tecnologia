@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="../public/images/logo.png" type="image/x-icon">
     <title>V&S TECNOLOGIA</title>
 <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4cpcgN_CeE2ANSPMkZour9yYKRfeKiysIQEjwOsbvJ9kGnRgQ1wbthoyrY9xMAwCjY9UasoTazGloLzx2xxo0dbr0FFBo06bXKEZn_Xq1MGqY_2EwfY_pE42wZXsvdj4thIzMta8efmhs0IBVS9uHA" charset="UTF-8"></script></head>
 <body>
     <header>
         <div class="header">
             <div class="logo">
-                <img src="images/logo.png" alt="">
+                <img src="../public/images/logo.png" alt="">
                 <p><strong>V&S</strong></p>
                 <p>TECNOLOGIA </p>
                 <p> INSPIRANDO A EVOLUÇÃO!</p>
@@ -39,28 +39,28 @@
                 <div class="items">
                     <div class="iconsItems" id="homeIcon">
                         <a href="#home"><i class='bx bx-home-alt-2'></i></a>
-                        <p>Home</p>
+                        <a class="iconTextLink" href="#home">Home</a>
                     </div>
                     <div class="iconsItems" id="solutionIcon">
                         <a href="#solutions"><i class='bx bx-cog'></i></a>
-                        <p>Soluções</p>
+                        <a class="iconTextLink" href="#solutions">Soluções</a>
                     </div>
                     <div class="iconsItems" id="noticesIcon">
                         <a href="#notices"><i class='bx bx-bell' ></i></a>
-                        <p>Notícias</p>
+                        <a class="iconTextLink" href="#notices">Notícias</a>
                     </div>
                     <div class="iconsItems" id="contactIcon">
                         <a href="#contact"><i class='bx bx-envelope' ></i></a>
-                        <p>Contato</p>
+                        <a class="iconTextLink" href="#contact">Contato</a>
                     </div>
                     <div class="fixedItems">
                         <div class="iconsItems" id="whatssapIcon">
                             <a href="https://wa.me/5504934428218"><i class='bx bxl-whatsapp' ></i></a>
-                            <p>Whatssap</p>
+                            <a class="iconTextLink" href="https://wa.me/5504934428218">Whats</a>
                         </div>
                         <div class="iconsItems" id="instagramIcon">
                             <a href=""><i class='bx bxl-instagram' ></i></a>
-                            <p>Instagram</p>
+                            <a class="iconTextLink" href="#">Insta</a>
                         </div>
                     </div>
                 </div>
@@ -78,17 +78,17 @@
         <p>Oferecemos serviços em tecnologia que vão facilitar e impulsionar o seu negócio.</p>
         <div class="solutions-cards">
             <div class="TI">
-                <img src="images/redes.png" alt="">
+                <img src="../public/images/redes.png" alt="">
                 <h3>Terceirização & gestão de TI</h3>
                 <p>Oferecemos soluções completas e personalizadas para otimizar sua infraestrutura de tecnologia, garantir a segurança dos dados e impulsionar a eficiência operacional da sua empresa. Com nossa expertise e compromisso com a excelência, permitimos que você se concentre no seu negócio principal, enquanto cuidamos de todos os aspectos relacionados à tecnologia.</p>
             </div>
             <div class="Redes">
-                <img src="images/organograma.png" alt="">
+                <img src="../public/images/organograma.png" alt="">
                 <h3>Redes & Infraestrutura</h3>
                 <p>Oferecemos soluções completas de redes e infraestruturas conectadas. <br> Nós projetamos, implementamos e gerenciamos sistemas robustos e escaláveis para impulsionar a segurança e desempenho dos seus ambientes de rede. Com a nossa experiência e expertise, ajudamos você a construir uma base sólida para suportar as demandas atuais e futuras do seu negócio.</p>
             </div>
             <div class="Seg">
-                <img src="images/notebook.png" alt="">
+                <img src="../public/images/notebook.png" alt="">
                 <h3>Segurança corporativa</h3>
                 <p>Somos uma empresa confiável em soluções de segurança corporativa. Nossa missão é proteger seu negócio contra ameaças internas e externas, garantindo a integridade, confidencialidade e disponibilidade dos seus dados e sistemas. Oferecemos soluções personalizadas e ajudamos sua empresa a enfrentar os desafios atuais e emergentes de segurança cibernética.</p>
             </div>
@@ -119,6 +119,7 @@
                     <div class="p">
                         <p>FALE CONOSCO</p>
                     </div>
+
                     <div>
                         <div class="adress">
                             <p>Rua Lindolpho José Bordin, 109</p>
@@ -126,10 +127,12 @@
                         </div>
                     </div>
                     <div class="telefone">
-                        <p>+55 49 3442-8218<a href="https://wa.me/5504934428218" target="_blank"><i class='bx bxl-whatsapp' ></i></a></p>
+                        <p>+55 49 3442-8218</p>
+                        <a href="https://wa.me/5504934428218" target="_blank"><div class="items"><i class='bx bxl-whatsapp' ></i></div></a>
                     </div>
                     <div class="site">
                         <p>contato@vstecnologia.com.br</p>
+                        <div class="items"><i class='bx bx-envelope' ></i></div>
                     </div>
                 </div>
                 <div class="forms">
@@ -143,41 +146,50 @@
                         <button type="button" onclick="enviarFormulario()">SOLICITAR CONTATO</button>
                     </form>
                 </div>
-            </div>
-            <div class="all-footer">
-                <div class="footer">
-                    <div class="logo-footer">
-                        <img src="images/logo.png" alt="">
-                        <div class="text-footer">
-                            <p>V&S<span id="fraseEmpresa">TECNOLOGIA</span></p>
-                            <p>INSPIRANDO A EVOLUÇÃO!</p>
-                        </div>
-                    </div>
-                    <div class="adress-footer">
-                        <p> Rua Lindolpho José Bordin, 109 </p>
-                        <p> Concórdia, Santa Catarina - 89711-206</p>
-                        <p> contato@vstecnologia.com.br </p>
+
+                <div class="headerItems" id="footerIconsTest">
+                    <div class="items">
+                            <a href="#home"><i class='bx bx-home-alt-2'></i></a>
+                            <a href="#solutions"><i class='bx bx-cog'></i></a>
+                            <a href="#notices"><i class='bx bx-bell' ></i></a>
+                            <a href="#footer"><i class='bx bx-envelope' ></i></a>
+                            <a href="https://wa.me/5504934428218"><i class='bx bxl-whatsapp'></i></a>
+                            <a href="#"><i class='bx bxl-instagram' ></i></a>
                     </div>
                 </div>
-                <div class="items">
-                    <a href="https://wa.me/5504934428218" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
+            
+            </div>
+            
+            
+            <div class="all-footer">
+                <div class="footer">
+                    <div class="logo">
+                        <div class="logo-footerText">
+                            <img src="images/logo.png" alt="">
+                            <p><strong>V&S</strong></p>
+                            <p>TECNOLOGIA </p>
+                            <p> INSPIRANDO A EVOLUÇÃO!</p>
+                        </div>
+                        <div class="adress-footer">
+                            <p> Rua Lindolpho José Bordin, 109 | Concórdia, Santa Catarina - 89711-206</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
         <div class="all-footer-mobile">
             <div class="footer">
                 <div class="logo-footer">
-                    <img src="images/logo.png" alt="">
+                    <img src="../public/images/logo.png" alt="">
                     <div class="text-footer">
                         <p>V&S<span id="fraseEmpresa">TECNOLOGIA</span></p>
                         <p>INSPIRANDO A EVOLUÇÃO!</p>
                     </div>
-                </div>
-                <div class="adress-footer">
-                    <p> Rua Lindolpho José Bordin, 109 </p>
-                    <p> Concórdia, Santa Catarina - 89711-206</p>
-                    <p> contato@vstecnologia.com.br </p>
+                    <div class="adress-footer">
+                        <p> Rua Lindolpho José Bordin, 109 </p>
+                        <p> Concórdia, Santa Catarina - 89711-206</p>
+                        <p> contato@vstecnologia.com.br </p>
+                    </div>
                 </div>
             </div>
             <div class="items">
@@ -192,12 +204,26 @@
     <div class="whats">
         <div class="iconsItems" id="homeIcon">
             <a href="#home"><i class='bx bx-home-alt-2'></i></a>
+            <!-- <a class="iconTextLink" href="#home">Home</a> -->
+            
         </div>
         <div class="iconsItems" id="whatssapIcon">
             <a href="https://wa.me/5504934428218"><i class='bx bxl-whatsapp' ></i></a>
+            <!-- <a class="iconTextLink" href="https://wa.me/5504934428218">Whatsapp</a> -->
+            
         </div>
     </div>
-
+    <div class="cookies">
+        <form id="cookie-form" method="post" action="/configurar-cookies">
+            <p>Utilizamos de cookies para melhorar sua experiência em nossosite para compreender a sua interação com o nosso serviço. Aoclicar em Aceitar, você concorda com o uso de tais tecnologiaspara marketing e análise</p>
+            <button value="true" name="aceitarCookies">
+              <p>Aceitar</p>
+            </button>
+            <button value="false" name="aceitarCookies">
+              <p>Recusar</p>
+            </button>
+        </form>
+    </div>
     <div id="email-sucesso" style="display: none;">
         <h1> Sucesso ao enviar o email <i class='bx bx-check bx-tada' ></i> </h1>
         <p> Vamos responder o mais rápido possível! </p>

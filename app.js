@@ -10,7 +10,7 @@ const SerchNotices = require(`${__dirname}/models/serch-noticias`)
 const cors = require('cors');
 const router = express.Router();
 const multer = require('multer');
-const main = require(`${__dirname}/models/main`);
+// const main = require(`${__dirname}/models/main`);
 const https = require('https');
 
 const cookieParser = require('cookie-parser');
@@ -76,7 +76,7 @@ router.post('/configurar-cookies', (req, res) => {
 
 router.post('/cadastro', async function(req, res) {
     
-  await main(req, res);
+  // await main(req, res);
 
 });
 
@@ -89,6 +89,6 @@ const options = {
 
 const server = https.createServer(options, app);
 
-server.listen(process.env.PORT_APP, () => {
+app.listen(4000, () => {
     console.log('server on');
 });

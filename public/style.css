@@ -114,6 +114,7 @@ header{
 
 div.header{
     margin: 0px 10%;
+    margin-top: 1.3em;
     display: flex;
     height: 60px;
     justify-content: space-between;
@@ -127,6 +128,10 @@ div.logo{
     color: var(--color-font-bg);
     align-items: center;
     margin-top: 13px;
+}
+
+footer div.logo {
+    align-items: end;
 }
 
 div.logo p{
@@ -158,7 +163,7 @@ div.headerItems{
 div.iconsItems{
     display: flex;
     flex-direction: column;
-    width: 55px;
+    width: 62px;
 }
 
 div.header div.items{
@@ -170,50 +175,58 @@ div.header div.items{
 }
 
 
-div.iconsItems p{
+div.iconsItems a.iconTextLink{
     color: var(--color-logo);
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 1%;/* 
     position: relative;
     text-align: center;
     top: -5px;
     left: -20%;
     opacity: 0; */
+    transform: translateY(-156%);
     text-align: center;
     opacity: 0;
 }
 
-div.iconsItems:hover p{
+div.iconsItems:hover a.iconTextLink{
     animation: textIconShow .8s forwards;
 }
 
-div.iconsItems:nth-child(2) p{
-    margin-left: -10px;
+div.headerItems div.iconsItems:hover i{
+    animation: iconHidden .5s forwards;
 }
 
-div.iconsItems:nth-child(3) p{
+div.iconsItems:nth-child(2) a.iconTextLink{
+    margin-left: -3px;
+}
+
+div.iconsItems:nth-child(3) a.iconTextLink{
+    margin-left: -2px;
+}
+
+div.iconsItems:nth-child(4) a.iconTextLink{
+    margin-left: -1px;
+}
+
+.fixedItems div.iconsItems:nth-child(1) a.iconTextLink{
     margin-left: -5px;
 }
 
-div.iconsItems:nth-child(4) p{
-    margin-left: -5px;
-}
-
-.fixedItems div.iconsItems:nth-child(1) p{
-    margin-left: -10px;
-}
-
-div.iconsItems:nth-child(6) p{
+div.iconsItems:nth-child(6) a.iconTextLink{
     margin-left: -9px;
 }
 
 @keyframes textIconShow{
-    from{
-        transform: translateY(-100%);
-    }
     to{
-        transform: translateY(0);
+        /* transform: translateY(0); */
         opacity: 1;
+    }
+}
+
+@keyframes iconHidden {
+    to{
+        opacity: 0;
     }
 }
 
@@ -223,7 +236,7 @@ div.header div.items div.fixedItems{
 
 div.items i, div.iconsItems i{
     color: var(--color-logo);
-    font-size: 1em;
+    font-size: 1.3em;
     margin: 0 5%;
     font-weight: 100;
     border: 1px solid var(--color-logo);
@@ -620,23 +633,15 @@ section.contact div.contact-items i{
 div.whats{
     position: fixed;
     transform: translateY(-50%);
-    width: 120px;
+    width: 100px;
     height: 70px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     text-align: center;
     right: 50px;
     top: 90vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-div.whats i{
-    font-size: 40px;
-    position: relative;
-    color: var(--color-logo);
-    width: 100%;
-    display: inline;
 }
 
 section.footer{
@@ -663,9 +668,9 @@ div.all-footer, div.all-footer-mobile{
     flex-wrap: wrap;
     width: 70%;
     color: white;
-    margin-bottom: 0;
-    min-height: 250px;
-    margin-top: 4%;
+    /* margin-bottom: 0; */
+    height: 100px;
+    /* margin-top: 4%; */
 }
 
 div.all-footer div.footer div.logo-footer{
@@ -687,7 +692,7 @@ div.text-footer p:nth-child(1){
 
 
 div.text-footer p:nth-child(2){
-    margin: -1.3em 0 2.4em 6.8em;
+    margin: -2.3em 0 3.4em 5.4em;
     font-size: .7em;
     /* padding: 0 0 0 5em; */
 }
@@ -696,8 +701,8 @@ span#fraseEmpresa{
     font-weight: 100;
 }
 
-div.all-footer div.adress-footer p {
-    margin-left: 85px;
+div.all-footer div.adress-footer {
+    height: 100px;
 }
 
 div.adress-footer p {
@@ -706,14 +711,14 @@ div.adress-footer p {
 }
 
 
-div.all-footer div.items , div.all-footer-mobile div.items{
+/* div.all-footer div.items , div.all-footer-mobile div.items{
     margin-top: 100px;
     height: 50px;
-}
+} */
 
-div.all-footer div.items div a, div.all-footer-mobile div.items div a{
+/* div.all-footer div.items div a, div.all-footer-mobile div.items div a{
     margin: 30px;
-}
+} */
 
 div.ass {
     background-color: var(--color-logo);
@@ -722,6 +727,7 @@ div.ass {
     align-items: center;
     justify-content: center;
 }
+
 div.ass p {
     text-align: center;
     color: var(--footer-color);
@@ -734,18 +740,19 @@ footer div.contact{
     width: 70%;
     margin: auto;
     border-bottom: 1px solid var(--color-logo);
-    margin-top: 6%;
+    /* margin-top: 6%; */
+    /* height: 100%; */
+    align-items: center;
+    padding-top: 4%;
 }
 
 footer div.contact > div{
-    margin: 0 5%;
+    margin: 15% 5%;
 }
 
-footer div.contact > div{
-    height: 80%;
-}
-
-footer div.contact div.contactInfo div{
+footer div.contact div.contactInfo > div{
+    display: grid;
+    grid-template-columns: calc(100% -50px) 50px;
     border-bottom: 1px solid var(--color-logo);
 }
 
@@ -799,14 +806,15 @@ footer div.contact div.forms form textarea{
     font-size: 1.1em;
     font-family: var(--font);
 }
+
 textarea:focus, input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 }
 
 footer div.contact div.contactInfo {
-    margin: 5%;
-    margin-top: 0;
+    /* margin: 0%; */
+    margin-top: -10%;
 }
 
 footer div.contact div.contactInfo div.p p, div.telefone p{
@@ -871,8 +879,27 @@ footer div.contact div.forms form button{
     background-color: var(--color-logo);
     border: none;
     color: #0a2241;
-    margin-bottom: 10%;
+    margin-bottom: 0;
     transform: translateX(-8px);
+}
+
+div#footerIconsTest{
+    height: 100px;
+    grid-column: span 2;
+    margin: 0;
+    display: grid;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+div#footerIconsTest > div.items{
+    margin: auto;
+    display: flex;
+}
+
+div#footerIconsTest > div.items a{
+    margin: 10px;
 }
 
 footer div.contact div.items{
@@ -925,6 +952,7 @@ div.cookies form button{
     align-items: center;
     justify-content: space-between;
 }
+
 
 
 
