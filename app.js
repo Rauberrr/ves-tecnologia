@@ -10,13 +10,14 @@ const SerchNotices = require(`${__dirname}/models/serch-noticias`)
 const cors = require('cors');
 const router = express.Router();
 const multer = require('multer');
-// const main = require(`${__dirname}/models/main`);
+const main = require(`${__dirname}/models/main`);
 const https = require('https');
 
 const cookieParser = require('cookie-parser');
 
 // config webpage
 const index = fs.readFileSync(`${__dirname}/template/index.html`, 'utf-8');
+const cookies = fs.readFileSync(`${__dirname}/template/cookies.html`, 'utf-8');
 const cardsNotice = fs.readFileSync(`${__dirname}/template/cards-notice.html`, 'utf-8');
 
 // models
@@ -42,6 +43,7 @@ router.post('/configurar-cookies', (req, res) => {
     
     if (aceitarCookies === 'true') {
       res.cookie('aceitarCookies', 'true', { maxAge: 20000 });
+
     } else {
       res.clearCookie('aceitarCookies');
       // res.cookie('aceitarCookies', 'false', { maxAge: 20000 });
@@ -50,7 +52,7 @@ router.post('/configurar-cookies', (req, res) => {
   });
   
   
-  
+
   
   
   // main page
@@ -70,13 +72,17 @@ router.post('/configurar-cookies', (req, res) => {
   res.send(outputWithCookieInfo);
 });
 
+router.get('/cookies', function(req, res) {
+  res.send(cookies);
+})
+
 // const email2 = require(`${__dirname}/models/email`);
 // send email page
 
 
 router.post('/cadastro', async function(req, res) {
     
-  // await main(req, res);
+  await main(req, res);
 
 });
 
@@ -89,6 +95,6 @@ const options = {
 
 const server = https.createServer(options, app);
 
-app.listen(4000, () => {
+server.listen(process.env.PORT_APP, () => {
     console.log('server on');
 });

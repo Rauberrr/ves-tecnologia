@@ -85,10 +85,6 @@ div.custom-loaderdiv {
     } 
 }
 
-.hidden {
-    display: none;
-}
-
 :root{
     --color-logo: #84d2e2;
     --font-color-blue:  #294d6f;
@@ -130,10 +126,6 @@ div.logo{
     margin-top: 13px;
 }
 
-footer div.logo {
-    align-items: end;
-}
-
 div.logo p{
     font-size: 1.2em;
     height: 40px;
@@ -146,7 +138,7 @@ div.logo p:nth-child(2){
 
 div.logo p:nth-child(4){
     font-size: .7em;
-    padding: 1.7em 0 0 .5em;
+    padding: 1.6em 0 0 .5em;
 }
 
 div.logo img{
@@ -165,15 +157,6 @@ div.iconsItems{
     flex-direction: column;
     width: 62px;
 }
-
-div.header div.items{
-    position: relative;
-    width: auto;
-    margin-top: 12px;
-    display: flex;
-    justify-content: end;
-}
-
 
 div.iconsItems a.iconTextLink{
     color: var(--color-logo);
@@ -214,6 +197,69 @@ div.iconsItems:nth-child(4) a.iconTextLink{
 }
 
 div.iconsItems:nth-child(6) a.iconTextLink{
+    margin-left: -9px;
+}
+
+@keyframes textIconShow{
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes iconHidden {
+    to{
+        opacity: 0;
+    }
+}
+
+div.header div.items{
+    position: relative;
+    width: auto;
+    margin-top: 12px;
+    display: flex;
+    justify-content: end;
+}
+
+
+div.iconsItems p{
+    color: var(--color-logo);
+    font-size: 1.2em;
+    margin: 1%;/* 
+    position: relative;
+    text-align: center;
+    top: -5px;
+    left: -20%;
+    opacity: 0; */
+    transform: translateY(-125%);
+    text-align: center;
+    opacity: 0;
+}
+
+div.iconsItems:hover p{
+    animation: textIconShow .8s forwards;
+}
+
+header div.iconsItems:hover i{
+    animation: iconHidden .5s forwards;
+}
+
+div.iconsItems:nth-child(2) p{
+    margin-left: -3px;
+}
+
+div.iconsItems:nth-child(3) p{
+    margin-left: -5px;
+}
+
+div.iconsItems:nth-child(4) p{
+    margin-left: -5px;
+}
+
+.fixedItems div.iconsItems:nth-child(1) p{
+    margin-left: -5px;
+}
+
+div.iconsItems:nth-child(6) p{
     margin-left: -9px;
 }
 
@@ -633,12 +679,12 @@ section.contact div.contact-items i{
 div.whats{
     position: fixed;
     transform: translateY(-50%);
-    width: 100px;
+    width: 110px;
     height: 70px;
     /* border-radius: 50%; */
     text-align: center;
     right: 50px;
-    top: 90vh;
+    top: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -652,38 +698,41 @@ section.footer{
     background-position: center center;
 }
 
-footer {
-    display: grid;
-    grid-template-rows: 60% 30%;
+/* footer {
     position: relative;
     bottom: -1px;
     min-height: 100vh;
-}
+} */
 
 div.all-footer, div.all-footer-mobile{
-    padding: 1.3em 0 1em 0;
+ /*    padding: 1.3em 0 1em 0; */
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
     color: white;
-    /* margin-bottom: 0; */
     height: 100px;
-    /* margin-top: 4%; */
 }
 
+/* div.all-footer{
+    position: absolute;
+    bottom: 0;
+}
+ */
 div.all-footer div.footer div.logo-footer{
     display: flex;
 }
 
-div.logo-footer img, div.all-footer-mobile img {
-  /*   transform: translate(-85%, 97%); */
+div.all-footer-mobile img {
     position: relative;
     width: 85px;
     height: 85px;
 }
 
+div.logo-footerText img{
+    transform: translateY(15px);
+} 
 
 div.text-footer p:nth-child(1){
     font-weight: bold;
@@ -692,33 +741,32 @@ div.text-footer p:nth-child(1){
 
 
 div.text-footer p:nth-child(2){
-    margin: -2.3em 0 3.4em 5.4em;
+    margin: -2.3em 0 3.4em 5.7em;
     font-size: .7em;
-    /* padding: 0 0 0 5em; */
 }
 
 span#fraseEmpresa{
     font-weight: 100;
 }
 
-div.all-footer div.adress-footer {
-    height: 100px;
+footer div.logo{
+    align-items: end;
 }
 
-div.adress-footer p {
+div.adress-footer a {
     font-size: .9em;
-    margin: .2em;
+    margin-left: 85px;
 }
 
 
-/* div.all-footer div.items , div.all-footer-mobile div.items{
+div.all-footer div.items , div.all-footer-mobile div.items{
     margin-top: 100px;
     height: 50px;
-} */
+}
 
-/* div.all-footer div.items div a, div.all-footer-mobile div.items div a{
+div.all-footer div.items div a, div.all-footer-mobile div.items div a{
     margin: 30px;
-} */
+}
 
 div.ass {
     background-color: var(--color-logo);
@@ -727,7 +775,6 @@ div.ass {
     align-items: center;
     justify-content: center;
 }
-
 div.ass p {
     text-align: center;
     color: var(--footer-color);
@@ -740,24 +787,29 @@ footer div.contact{
     width: 70%;
     margin: auto;
     border-bottom: 1px solid var(--color-logo);
-    /* margin-top: 6%; */
-    /* height: 100%; */
     align-items: center;
     padding-top: 4%;
 }
 
 footer div.contact > div{
-    margin: 15% 5%;
+    margin: 5%;
 }
 
 footer div.contact div.contactInfo > div{
-    display: grid;
-    grid-template-columns: calc(100% -50px) 50px;
     border-bottom: 1px solid var(--color-logo);
+    display: grid;
+    grid-template-columns: calc(100%-50px) 50px;
+    margin: 0;
+}
+
+footer div.contact div.contactInfo div div.items{
+    width: 50px;
 }
 
 footer div.contact div.contactInfo div div.adress{
     border-bottom: 0px;
+    margin: 4%;
+    margin-left: 7%;
 }
 
 /* footer div.contact div.forms{
@@ -843,18 +895,13 @@ footer div.contact div.contactInfo div.telefone p a i{
     transform: translateY(11%);
 }
 
-footer div.contact div.contactInfo div > div{
-    margin: 4%;
-    margin-left: 7%;
-}
-
 footer div.contact div.contactInfo div div > p{
     margin: 4%;
     margin-left: 7%;
 }
 
 
-footer div.contact div.contactInfo div div.adress p{
+footer div.contact div.contactInfo div div.adress a{
     color: var(--color-font-bg);
     font-size: 1.5em;
     font-weight: 400;
@@ -862,12 +909,11 @@ footer div.contact div.contactInfo div div.adress p{
     margin: 0;
 }
 
-footer div.contact div.contactInfo div.site p{
+footer div.contact div.contactInfo div.site p a{
    display: inline-block;
    font-weight: 400;
-   margin: 4%;
    margin-left: 7%;
-   font-size: 1.5em;
+   font-size: 1.8em;
    color: var(--color-font-bg);
 } 
 
@@ -883,14 +929,30 @@ footer div.contact div.forms form button{
     transform: translateX(-8px);
 }
 
+/* footer div.contact div.items{
+    margin: 0;
+}
+
+footer div.contact div.items div{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+}
+
+div.items{
+    min-width: 100px;
+    margin: 20px;
+} */
+
 div#footerIconsTest{
     height: 100px;
     grid-column: span 2;
-    margin: 0;
     display: grid;
     width: 100%;
-    margin-top: 3%;
-    margin-bottom: 5%;
+    margin: 3% 0 2%;
 }
 
 div#footerIconsTest > div.items{
@@ -902,35 +964,21 @@ div#footerIconsTest > div.items a{
     margin: 10px;
 }
 
-footer div.contact div.items{
-    grid-column: span 2;
-    margin: 0;
+div.contactItemsFooter{
+    grid-column: 2;
+    font-size: 1.8em;
 }
 
-footer div.contact div.items div{
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10%;
-    min-width: 200px;
-}
-
-div.items{
-    min-width: 100px;
-    margin: 20px;
-}
 
 div.cookies{
     position: fixed;
-    width: 100vw;
+    width: 100%;
     bottom: 0px;
     background-color: var(--color-logo);
     font-weight: 400;
     color: var(--footer-color);
     display: flex;
-    height: 60px;
+    min-height: 50px;
 }
 
 
@@ -938,23 +986,30 @@ div.cookies form{
     display: flex;
     align-items: center;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
 }
 
-div.cookies form p, button{
+div.cookies a{
+    font-size: 1em;
+}
+
+div.cookies form p{
     margin-left: 10px;
 }
 
 div.cookies form button{
     width: 100px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-right: 10px;
 }
 
-
-
+div.cookies form button a, form button p{
+    margin: 0;
+    font-family: var(--font);
+    font-size: 1.1em;
+    color: black;
+}
 
 div.all-footer-mobile{
     display: none;
@@ -966,6 +1021,27 @@ div.all-footer-mobile{
         width: 90%;
         margin: auto;
         margin-bottom: 7%;
+    }
+
+    div.whats{
+        position: fixed;
+        right: 2%;
+        top: 85%;
+        width: 110px;
+    }
+
+    div.whats div{
+        width: 40px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    div.whats i{
+        /* font-size: 30px; */
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color-logo);
     }
 
     section.notices-section div.cards-notices{
@@ -988,9 +1064,11 @@ div.all-footer-mobile{
     div.logo p:nth-child(3){
         display: none;
     }
+    
 }
 
 @media (max-width: 850px){  /* Header-breaK */
+    
     
     div.homeText h1{
         font-size: 4em;
@@ -1111,7 +1189,7 @@ div.all-footer-mobile{
         margin-left: 0;
     }
     
-    footer div.contact div.contactInfo div div.adress p, div.site a{
+    footer div.contact div.contactInfo div div.adress a, div.site a{
         font-size: 110%;
         margin: 0;
     }
@@ -1159,6 +1237,10 @@ div.all-footer-mobile{
         margin-top: 50px;
     }
 
+
+    div.contact{
+        border-bottom: 0px;
+    }
 }
 
 @media (max-width: 770px){
@@ -1167,26 +1249,7 @@ div.all-footer-mobile{
         display: none;
     }
 
-    div.whats{
-        position: fixed;
-        right: 0%;
-        top: 85%;
-        width: 100px;
-    }
-
-    div.whats div{
-        width: 40px;
-        text-align: center;
-        margin: 0;
-    }
     
-    div.whats i{
-        font-size: 30px;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--color-logo);
-    }
 
     footer div.contact div.forms form{
         display: grid;
@@ -1257,4 +1320,10 @@ div.all-footer-mobile{
         margin-bottom: 0;
     }
     
+}
+
+
+
+.hidden {
+    display: none;
 }
