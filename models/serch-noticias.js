@@ -31,14 +31,19 @@ async function crawlSinglePage(url, list) {
         const title = $('h1').text().trim();
         const subject = $('.banner-excerpt').text().trim();
         const src = $('.banner-img img').attr('src');
-        const obj = {
-            title: title,
-            subject: subject,
-            src: src,
-            link: url,
-        };
-
-        list.push(obj);
+        if(!title || !subject || !src) {
+            console.log('nao tem title ou assunto ou imagem');
+        }
+        else {
+            const obj = {
+                title: title,
+                subject: subject,
+                src: src,
+                link: url,
+            };
+            
+            list.push(obj);
+        }
 
         if(list.length === 3) {
             saveData(list); // Salva após cada coleta de notícia individual
